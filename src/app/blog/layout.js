@@ -1,11 +1,11 @@
 import localFont from 'next/font/local';
 import '../globals.css';
-import Header from '@/components/Header';
+import Header from '../../components/Header.tsx';
 import { ThemeProvider } from 'next-themes';
-import ThemeCom from '@/components/ThemeCom';
+import ThemeCom from '../../components/ThemeCom';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeModeScript } from 'flowbite-react';
-import Footer from '@/components/Footer';
+import Footer from '../../components/Footer.jsx';
 import { SignedIn, SignedOut, UserButton, SignInButton, SignUpButton } from '@clerk/nextjs';
 
 const geistSans = localFont({

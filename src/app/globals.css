@@ -1,9 +1,8 @@
-/* stylelint-disable at-rule-no-unknown */
-@import "tailwindcss/preflight";
-/* stylelint-enable at-rule-no-unknown */
+@import "tailwindcss";
 
 body {
   height: 100vh;
+  background-color:#ededed;
 }
 
 .ql-editor {

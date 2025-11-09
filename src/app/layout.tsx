@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Bowlby_One_SC, Architects_Daughter} from "next/font/google";
 import "./globals.css";
-import Navigation from "../../src//components/navbar";
+import Navigation from "../../src/components/navbar";
+import * as React from "react";
 
 const bowlbyOne = Bowlby_One_SC({
   variable: "--font-bowlby-one",

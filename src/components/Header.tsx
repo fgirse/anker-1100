@@ -9,6 +9,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import * as React from 'react';
 
 export default function Header() {
   const path = usePathname();

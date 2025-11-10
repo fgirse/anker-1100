@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Bowlby_One_SC, Architects_Daughter} from "next/font/google";
+import { Bowlby_One, Architects_Daughter} from "next/font/google";
 import "./globals.css";
 import Navigation from "../../src/components/navbar";
 import * as React from "react";
+import InfoBar from "../components/InfoBar";
+import Footer from "../components/Footer";
 
-const bowlbyOne = Bowlby_One_SC({
-  variable: "--font-bowlby-one",
-  subsets: ["latin"],
-  weight: "400"
-});
+const bowlbyOne = Bowlby_One({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bowlby'
+})
 
 const architectsDaughter = Architects_Daughter({
-  variable: "--font-architects-daughter",
-  subsets: ["latin"],
-  weight: "400"
-});
+  weight: '400', 
+  subsets: ['latin'],
+  variable: '--font-architects'
+})
 
 
 export const metadata: Metadata = {
@@ -29,10 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${bowlbyOne.variable} ${architectsDaughter.variable} antialiased`}
-      >
+      <body className={`${bowlbyOne.variable} ${architectsDaughter.variable} antialiased`}>
         <Navigation />
+        <InfoBar />
         {children}
       </body>
     </html>

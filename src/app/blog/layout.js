@@ -26,19 +26,20 @@ export const metadata = {
 export default function BloqLayout({ children }) {
   return (
     <ClerkProvider>
-      
-      
+      <html lang='en' suppressHydrationWarning>
+        <head>
+          <ThemeModeScript />
+        </head>
         
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <ThemeProvider>
               <ThemeCom>
                 <Header/>
                 {children}
-                <Footer />
               </ThemeCom>
             </ThemeProvider>
         </body>
-      
+      </html>
     </ClerkProvider>
   );
 }

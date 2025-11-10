@@ -1,6 +1,5 @@
 'use client';
-
-import { Button, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle, TextInput } from "flowbite-react";
+import { Button, Navbar, NavbarToggle, NavbarLink, NavbarCollapse, TextInput } from 'flowbite-react';
 import Link from 'next/link';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
@@ -10,8 +9,6 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import { dark, light } from '@clerk/themes';
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Image from 'next/image';
-import Logo from '../../public/LogoAlt.png';
 
 export default function Header() {
   const path = usePathname();
@@ -36,12 +33,17 @@ export default function Header() {
     }
   }, [searchParams]);
   return (
-   <Navbar fluid rounded className="w-screen h-[7vh] flex items-center gap-[12vw]   max-w-9xl mx-auto bg-white dark:bg-gray-800 shadow-md">
-      <NavbarBrand href="/">
-        <Image src={Logo} height={50} width={200} className="ml-3 h-6 sm:h-9" alt="Rettungsanker Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
-      </NavbarBrand>
-      <form className='relative left-[50vw]' onSubmit={handleSubmit}>
+    <Navbar className='hidden lg:border-b-2 lg:h-24  lg:w-full '>
+      <Link
+        href='/'
+        className=' relative self-center whitespace-nowrap text-[4vw] sm:text-3xl font-semibold dark:text-white'
+      >
+        <span className='relative left-5 top-[2vh] px-2 py-1 bg-linear-to-r from-yellow-500 via-amber-500 to-green-500 rounded-lg text-white'>
+          Rettungsanker-Bloq
+        </span>
+        
+      </Link>
+      <form className='relative top-[2vh]' onSubmit={handleSubmit}>
         <TextInput
           type='text'
           placeholder='Search...'
@@ -51,7 +53,7 @@ export default function Header() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
-      <Button className='w-12 h-10 lg:hidden' color='red' pill>
+      <Button className='w-12 h-10 lg:hidden' color='gray' pill>
         <AiOutlineSearch />
       </Button>
       <div className='flex gap-2 md:order-2'>
@@ -63,9 +65,9 @@ export default function Header() {
         >
           {theme === 'light' ? <FaSun /> : <FaMoon />}
         </Button>
-        <SignedIn className='relative right-[10vw] top-[12vh]'>
- 
-          <UserButton            appearance={{
+        <SignedIn>
+          <UserButton
+            appearance={{
               baseTheme: theme === 'light' ? light : dark,
             }}
             userProfileUrl='/dashboard?tab=profile'
@@ -78,49 +80,25 @@ export default function Header() {
             </Button>
           </Link>
         </SignedOut>
-              <div className="flex md:order-2">
-        <Button>Get started</Button>
-        <NavbarToggle  />
-      </div>
+        <NavbarToggle className='relative right-[3vw] top-[2vh] hover:text-amber-500' />
       </div>
       <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Home
-        </NavbarLink>
-        <NavbarLink href="#">About</NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
+        <Link href='/'>
+          <NavbarLink active={path === '/'} as={'div'}>
+            Home
+          </NavbarLink>
+        </Link>
+        <Link href='/about'>
+          <NavbarLink active={path === '/about'} as={'div'}>
+            About
+          </NavbarLink>
+        </Link>
+        <Link href='/projects'>
+          <NavbarLink active={path === '/projects'} as={'div'}>
+            Projects
+          </NavbarLink>
+        </Link>
       </NavbarCollapse>
     </Navbar>
   );
 }
-
-
-
-
-export function Component() {
-  return (
-    <Navbar fluid rounded>
-      <NavbarBrand href="https://flowbite-react.com">
-        <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
-      </NavbarBrand>
-      <div className="flex md:order-2">
-        <Button>Get started</Button>
-        <NavbarToggle className="relative right-[3vw] top-[2vh] hover:text-amber-500" />
-      </div>
-      <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Home
-        </NavbarLink>
-        <NavbarLink href="#">About</NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
-      </NavbarCollapse>
-    </Navbar>
-  );
-}
-
-

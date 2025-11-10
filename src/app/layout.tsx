@@ -30,11 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+      <html lang='en' suppressHydrationWarning>
       <body className={`${bowlbyOne.variable} ${architectsDaughter.variable} antialiased`}>
         <Navigation />
         <InfoBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

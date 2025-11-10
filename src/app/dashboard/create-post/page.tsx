@@ -4,7 +4,7 @@ import { useUser } from '@clerk/nextjs';
 import { Alert, Button, FileInput, Select, TextInput } from 'flowbite-react';
 
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { useRouter } from 'next/navigation';
 const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false });
 // https://dev.to/a7u/reactquill-with-nextjs-478b
@@ -24,11 +24,11 @@ import 'react-circular-progressbar/dist/styles.css';
 export default function CreatePostPage() {
   const { isSignedIn, user, isLoaded } = useUser();
 
-  const [file, setFile] = useState(null);
-  const [imageUploadProgress, setImageUploadProgress] = useState(null);
-  const [imageUploadError, setImageUploadError] = useState(null);
-  const [formData, setFormData] = useState({});
-  const [publishError, setPublishError] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [imageUploadProgress, setImageUploadProgress] = useState<string | null>(null);
+  const [imageUploadError, setImageUploadError] = useState<string | null>(null);
+  const [formData, setFormData] = useState<Record<string, any>>({});
+  const [publishError, setPublishError] = useState<string | null>(null);
   const router = useRouter();
   console.log(formData);
 
@@ -69,8 +69,13 @@ export default function CreatePostPage() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+    // Basic validation for editor content (strip HTML tags and check for non-empty text)
+    if (!formData.content || formData.content.replace(/<(.|\n)*?>/g, '').trim() === '') {
+      setPublishError('Content is required');
+      return;
+    }
     try {
       const res = await fetch('/api/post/create', {
         method: 'POST',
@@ -79,7 +84,7 @@ export default function CreatePostPage() {
         },
         body: JSON.stringify({
           ...formData,
-          userMongoId: user.publicMetadata.userMongoId,
+          userMongoId: user?.publicMetadata?.userMongoId,
         }),
       });
       const data = await res.json();
@@ -131,22 +136,23 @@ export default function CreatePostPage() {
           </div>
           <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
             <FileInput
-              type='file'
               accept='image/*'
-              onChange={(e) => setFile(e.target.files[0])}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setFile(e.target.files?.[0] ?? null)
+              }
             />
             <Button
               type='button'
-              gradientDuoTone='purpleToBlue'
+              color='purple'
               size='sm'
               outline
               onClick={handleUpdloadImage}
-              disabled={imageUploadProgress}
+              disabled={!!imageUploadProgress}
             >
               {imageUploadProgress ? (
                 <div className='w-16 h-16'>
                   <CircularProgressbar
-                    value={imageUploadProgress}
+                    value={Number(imageUploadProgress) || 0}
                     text={`${imageUploadProgress || 0}%`}
                   />
                 </div>
@@ -154,29 +160,25 @@ export default function CreatePostPage() {
                 'Upload Image'
               )}
             </Button>
-          </div>
 
-          {imageUploadError && (
-            <Alert color='failure'>{imageUploadError}</Alert>
-          )}
-          {formData.image && (
-            <img
-              src={formData.image}
-              alt='upload'
-              className='w-full h-72 object-cover'
-            />
-          )}
+            {formData.image && (
+              <img
+                src={formData.image}
+                alt='upload'
+                className='w-full h-72 object-cover'
+              />
+            )}
+          </div>
 
           <ReactQuill
             theme='snow'
             placeholder='Write something...'
             className='h-72 mb-12'
-            required
             onChange={(value) => {
               setFormData({ ...formData, content: value });
             }}
           />
-          <Button type='submit' gradientDuoTone='purpleToPink'>
+          <Button type='submit' color='purple'>
             Publish
           </Button>
         </form>

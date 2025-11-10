@@ -3,7 +3,6 @@ import '../globals.css';
 import Header from '../../components/Header';
 import { ThemeProvider } from 'next-themes';
 import ThemeCom from '../../components/ThemeCom';
-import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeModeScript } from 'flowbite-react';
 import Footer from '../../components/Footer';
 
@@ -25,7 +24,7 @@ export const metadata = {
 
 export default function BloqLayout({ children }) {
   return (
-    <ClerkProvider>
+    
       <html lang='en' suppressHydrationWarning>
         <head>
           <ThemeModeScript />
@@ -40,6 +39,6 @@ export default function BloqLayout({ children }) {
             </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+    
   );
 }

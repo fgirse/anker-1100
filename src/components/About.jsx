@@ -22,7 +22,7 @@ const About = () => (
 
       <motion.div
         variants={fadeIn("up", "tween", 0.2, 1)}
-        className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-gray-500"
+        className="mt-2 font-normal sm:text-[32px] text-[20px] text-center text-gray-500"
       >
         <h1 className="text-[2.5rem] lg:text-[4rem] font-extrabold text-yellow-500 text-center">&quot;Moin Moin&quot;</h1>
         <div className='w-36 h-36  md:w-[20vw] lg:w[20vh]  '>
@@ -80,7 +80,7 @@ const About = () => (
         variants={fadeIn("up", "tween", 0.3, 1)}
         src="/arrow-down.svg"
         alt="arrow-down"
-        className="w-[18px] h-[28px] object-contain mt-[28px]"
+        className="w-[18px] h-7 object-contain mt-7"
       ></motion.img>
     </motion.div>
   </section>

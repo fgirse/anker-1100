@@ -7,8 +7,13 @@ import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import { dark, light } from '@clerk/themes';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+
+function DashboardContent() {
+  const searchParams = useSearchParams();
+  // component logic
+}
 
 export default function Header() {
   const path = usePathname();
@@ -33,7 +38,7 @@ export default function Header() {
     }
   }, [searchParams]);
   return (
-    <Navbar className='hidden lg:border-b-2 lg:h-24  lg:w-full '>
+    <Navbar className=' lg:border-b-2 lg:h-24  lg:w-full '>
       <Link
         href='/'
         className=' relative self-center whitespace-nowrap text-[4vw] sm:text-3xl font-semibold dark:text-white'

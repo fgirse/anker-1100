@@ -5,6 +5,7 @@ import Navigation from "../../src/components/navbar";
 import * as React from "react";
 import InfoBar from "../components/InfoBar";
 import Footer from "../components/Footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const bowlbyOne = Bowlby_One({ 
   weight: '400',
@@ -30,6 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+      <ClerkProvider>
       <html lang='en' suppressHydrationWarning>
       <body className={`${bowlbyOne.variable} ${architectsDaughter.variable} antialiased`}>
         <Navigation />
@@ -38,5 +40,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+    </ClerkProvider>    
   );
 }

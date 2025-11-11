@@ -31,10 +31,11 @@ const About = () => (
           height="320"
           width="230"
           alt="Leuchtturm"
-          className="shape-lighthouse h-48 w-48"
-        /></div>              
+          className="shape-lighthouse h-54 w-60"
+        />
+        </div>              
         
-        <p className = "mt-[-20vh] text-[1.4rem] text-gray-300 md:text-[1.33rem] lg:text-[1.66rem]"> In Hommage an eine typische Kiez-Kneipe auf St.Pauli, haben wir im
+        <p className = "mt-5 text-[1.33rem] text-gray-300 md:text-[1.33rem] lg:text-[1.66rem]"> In Hommage an eine typische Kiez-Kneipe auf St.Pauli, haben wir im
         Herzen von Freiburg ein Lokal eröffnet, welches es so südlich der Elbe
         wohl kein zweites Mal gibt. Ausgebaut im Stile eines Schiffrumpfes, ist
         der im Zentrum der Altstadt gelegene Rettungsanker-Freiburg idealer

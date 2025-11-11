@@ -1,23 +1,33 @@
 import Image from "next/image";
 import LogoNeu from "../../public/LogoNeu.png";
 import Astra from "../../public/astraglaswbg.png";
-
+import HeroImage from "../../public/Hero.png";
+import Wine from "../../public/bottles03.png";
+import Cocktail from "../../public/Cocktailglas.svg";
+import Fussball from "../../public/Fussball.svg";
+import Crowdparty from "../../public/Crowdparty.png";
+import HansAlbers from "../../public/albers.jpg";
 
 export default function Bento() {
   return (
-    <><div className="flex flex-col items-center justify-center mb-[5vh]">
-      <Image src="/Hero.png" alt="Hero Image" width={500} height={300}  className="shadow-xl shadow-stone-300" />
+    <section className="mt-20 ">
+      <div className="text-center flex flex-col items-center">
+      <h1 className="mt-12 text-5xl headingA text-yellow-500 lg :text-[4vw]">gastlichkeit ist unsere philosophie</h1>
+      <div className=" w-[90vw] lg:w-[66vw] lg:h-[33vh] flex flex-col  items-center">
+      <Image src={HeroImage} alt="Hero Image" width={1500} height={700} className="shadow-xl shadow-stone-300 border-2 border-stone-300" />
+    </div>
+    </div>
+    <div className="mt-24">
+    <h1 className="text-center text-5xl headingA text-red-800 lg:text-[4vw]">Angebot und Service</h1>
     </div>
     <div className="bento-grid">
-        <div className="grid-item-overlay-1760057571577">
-          <h1 className="text-center text-[10vw] headingA text-yellow-500 lg: lg:text-[5vw]">Gastlichkeit ist unsere Philosophie</h1>
-        </div>
+       
 
         <div className="grid-item-overlay-1760057632942">
           <div className="mt-[3vh] flex flex-col items-center space-x-4 justify-center h-[70vh] w-full">
             <Image src={Astra} alt="Flens vom Fass" width={500} height={200} />
           </div>
-          <h1 className="mt-[5vh] text-[9vw] text-center headingA text-yellow-500 lg:text-5xl">Flens vom Fass</h1>
+          <h1 className="p-4 mt-[5vh] text-[9vw] text-center headingA text-yellow-500 lg:text-[10vw]">Bier vom Fass</h1>
 
           <h2 className="text-xl text-center text-white lg:text-4xl mt-[3vh]">
             Flensburger Pils - das kühle Blonde von der Waterkant. Astra-Pils - das Kultbier natürlich direkt vom Kiez
@@ -25,7 +35,7 @@ export default function Bento() {
         </div>
 
         <div className="grid-item-overlay-1760057666155">
-          <div className="flex flex-col items-center space-x-4 justify-center">
+          <div className="flex flex-col items-center space-x-4 justify-center w-2/3">
           <Image src={LogoNeu} alt="LogoNeu" width={300} height={180} className="mt-[5vh]" />
           </div>
         </div>
@@ -37,8 +47,8 @@ export default function Bento() {
         </div>
 
         <div className="grid-item-overlay-1760057851572">
-          <div>
-            <Image src="/bottles03.png" alt="WineIcon" width={500} height={200} />
+          <div className="flex flex-col items-center w-[80vw] ">
+            <Image src={Wine} alt="Wine Illustration" width={500} height={200} />
           </div>
           <div className="mt-[5vh] flex flex-col items-center space-x-4 justify-center">
             <h1 className="text-4xl text-center headingA text-yellow-500 lg:text-7xl">regionale Weine</h1>
@@ -54,7 +64,7 @@ export default function Bento() {
         <div className="grid-item-overlay-1760057891398"></div>
         <div className="grid-item-overlay-1760057918272">
           <div className="mt-[5vh] flex flex-col items-center space-x-4 justify-center">
-            <Image src="/cocktailglas.svg" alt="CocktailIcon" width={175} height={175} />
+            <Image src={Cocktail} alt="Cocktail Illustration" width={175} height={175} />
           </div>
           <h1 className="mt-[5vh] text-4xl text-center headingA text-yellow-500 lg:text-7xl">Cocktails & Longdrinks</h1>
           <h2 className="text-xl text-center text-white lg:text-4xl mt-[3vh]">
@@ -65,7 +75,7 @@ export default function Bento() {
         <div className="grid-item-overlay-1760057942145"></div>
         <div className="grid-item-overlay-1760057948843">
           <div className="mt-[5vh] flex flex-col items-center space-x-4 justify-center">
-            <Image src="/fussball.svg" alt="Fussball-Illustration" width={175} height={175} />
+            <Image src={Fussball} alt="Fussball-Illustration" width={175} height={175} />
           </div>
           <h1 className="mt-[5vh] text-4xl text-center headingA text-yellow-500 lg:text-7xl">Fussball</h1>
           <h1 className="text-center text-4xl headingA text-yellow-500 lg:text-7xl">TV Live</h1>
@@ -77,7 +87,7 @@ export default function Bento() {
         </div>
         <div className="grid-item-overlay-1760057999319">
           <div className="mt-[5vh] flex flex-col items-center space-x-4 justify-center">
-            <Image src="/Crowdparty.png" alt="CocktailIcon" width={600} height={200} />
+            <Image src={Crowdparty} alt="Gruppe Party" width={600} height={200} />
           </div>
           <h1 className="text-4xl mt-[5vh] text-center headingA text-yellow-500 lg:text-7xl">Party? Event?</h1>
           <h2 className="text-xl text-center text-white lg:text-4xl mt-[3vh]">
@@ -89,7 +99,7 @@ export default function Bento() {
         </div>
         <div className="grid-item-overlay-1760058017913">
           <div className="mt-[5vh] flex flex-col items-center space-x-4 justify-center">
-            <Image src="/Albers-white.png" alt="CocktailIcon" width={275} height={275} />
+            <Image src={HansAlbers} alt="Hans Albers" width={275} height={275} />
           </div>
           <h1 className="mt-[5vh] text-4xl text-center headingA text-yellow-500 lg:text-7xl">Hans Albers</h1>
           <h2 className="text-xl text-center text-white lg:text-4xl mt-[3vh]">
@@ -100,6 +110,7 @@ export default function Bento() {
     <div className="grid-item-overlay-1760058050498"></div>
     <div className="grid-item-overlay-1760058061196"></div>
     <div className="grid-item-overlay-1760058069825" />*/}
-      </div></>
+      </div>
+      </section>
   );
 }

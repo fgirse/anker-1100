@@ -79,10 +79,10 @@ export default function Header() {
           />
         </SignedIn>
         <SignedOut>
-          <Link href='/blog/sign-in'>
-            <Button gradientDuoTone='purpleToBlue' outline className='relative right-[3vw] top-[2vh] w-24 uppercase bg-slate-600 text-white text-2xl hover:bg-amber-500'>
+          <Link href='/sign-in'>
+            <button className='relative right-[3vw] top-[2vh] w-24 uppercase bg-linear-to-r from-purple-500 to-blue-500 text-white text-2xl hover:bg-amber-500 px-4 py-2 rounded-lg border border-purple-300 transition-colors'>
               Sign In
-            </Button>
+            </button>
           </Link>
         </SignedOut>
         <NavbarToggle className='relative right-[3vw] top-[2vh] hover:text-amber-500' />

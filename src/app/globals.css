@@ -135,6 +135,12 @@ input:-webkit-autofill:focus {
       format("svg");
 }
 
+
+h2 {
+        padding-inline: 2rem;
+  font-weight: bold;
+}
+
 .headingA {
   -webkit-text-stroke-width: 2.33px;
   -webkit-text-stroke-color: #ffffff;
@@ -162,21 +168,21 @@ input:-webkit-autofill:focus {
   -webkit-text-stroke-width: 0.66px;
   -webkit-text-stroke-color: #595959;
   font-family: "Architects Daughter";
-  font-weight: extrabold;
+  font-weight: 800;
 }
 
 .headingE {
   -webkit-text-stroke-width: 3.99px;
   -webkit-text-stroke-color: #595959;
   font-family: "Bowlby One SC";
-  font-weight: extrabold;
+  font-weight: 800;
 }
 
 .headingF {
   -webkit-text-stroke-width: 3.66px;
   -webkit-text-stroke-color: #fffffc;
   font-family: "Bowlby One SC";
-  font-weight: extrabold;
+  font-weight: 800;
 }
 
 .bg-wood {
@@ -209,7 +215,7 @@ input:-webkit-autofill:focus {
     ),
     url("/west-side-story.png");
   background-size: cover;
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
 }
 
 .bg-hero {
@@ -222,7 +228,7 @@ input:-webkit-autofill:focus {
     ),
     url("/lighthouse.webp");
   background-size: 100% 100%;
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
   height: 10%;
   width: 100%;
 }

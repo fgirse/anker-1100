@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import { Bowlby_One, Architects_Daughter} from "next/font/google";
 import "./globals.css";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 import Navigation from "../../src/components/navbar";
 import * as React from "react";
 import InfoBar from "../components/InfoBar";
 import Footer from "../components/Footer";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeModeScript } from 'flowbite-react';
+import { ThemeProvider } from 'next-themes';
+import ThemeCom from '../components/ThemeCom';
+import Header from "../components/Header";
 
 const bowlbyOne = Bowlby_One({ 
   weight: '400',
@@ -28,18 +39,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-      <ClerkProvider>
-      <html lang='en' suppressHydrationWarning>
-      <body className={`${bowlbyOne.variable} ${architectsDaughter.variable} antialiased`}>
-        <Navigation />
-        <InfoBar />
-        {children}
-        <Footer />
-      </body>
-    </html>
-    </ClerkProvider>    
-  );
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${bowlbyOne.variable} ${architectsDaughter.variable} antialiased`}>
+          <Header/>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
+  )
 }

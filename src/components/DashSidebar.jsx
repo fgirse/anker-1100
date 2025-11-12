@@ -14,15 +14,11 @@ import { SignOutButton } from '@clerk/nextjs';
 import { useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 
-function DashboardContent() {
-  const searchParams = useSearchParams();
-  // component logic
-}
-
 export default function Dashboard() {
   const [tab, setTab] = useState('');
   const searchParams = useSearchParams();
   const { user, isSignedIn } = useUser();
+
   useEffect(() => {
     const urlParams = new URLSearchParams(searchParams);
     const tabFromUrl = urlParams.get('tab');
@@ -90,7 +86,6 @@ export default function Dashboard() {
           </Sidebar.ItemGroup>
         </Sidebar.Items>
       </Sidebar>
-      <DashboardContent />
     </Suspense>
   );
 }

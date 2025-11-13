@@ -3,20 +3,15 @@ import { Bowlby_One, Architects_Daughter} from "next/font/google";
 import "./globals.css";
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
+
 } from '@clerk/nextjs'
-import Navigation from "../../src/components/navbar";
+//import Navigation from "../../src/components/navbar";
 import * as React from "react";
 import InfoBar from "../components/InfoBar";
 import Footer from "../components/Footer";
 import { ThemeModeScript } from 'flowbite-react';
 import { ThemeProvider } from 'next-themes';
 import ThemeCom from '../components/ThemeCom';
-import Header from "../components/Header";
 import MenuBar from "../components/Navigation";
 
 const bowlbyOne = Bowlby_One({ 
@@ -45,9 +40,17 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <ThemeModeScript />
+        </head>
         <body className={`${bowlbyOne.variable} ${architectsDaughter.variable} antialiased`}>
-          <MenuBar/>
-          {children}
+          <ThemeProvider>
+            <ThemeCom>
+              <MenuBar/>
+              <InfoBar/>
+              {children}
+            </ThemeCom>
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

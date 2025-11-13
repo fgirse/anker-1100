@@ -8,13 +8,13 @@ import {
   HiOutlineUserGroup,
   HiChartPie,
 } from 'react-icons/hi';
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { SignOutButton } from '@clerk/nextjs';
 import { useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 
-export default function Dashboard() {
+export default function DashSidebar() {
   const [tab, setTab] = useState('');
   const searchParams = useSearchParams();
   const { user, isSignedIn } = useUser();
@@ -32,60 +32,58 @@ export default function Dashboard() {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Sidebar className='w-full md:w-56'>
-        <Sidebar.Items>
-          <Sidebar.ItemGroup className='flex flex-col gap-1'>
-            {user?.publicMetadata?.isAdmin && (
-              <Link href='/dashboard?tab=dash'>
-                <Sidebar.Item
-                  active={tab === 'dash' || !tab}
-                  icon={HiChartPie}
-                  as='div'
-                >
-                  Dashboard
-                </Sidebar.Item>
-              </Link>
-            )}
-            <Link href='/dashboard?tab=profile'>
+    <Sidebar className='w-full md:w-56'>
+      <Sidebar.Items>
+        <Sidebar.ItemGroup className='flex flex-col gap-1'>
+          {user?.publicMetadata?.isAdmin && (
+            <Link href='/dashboard?tab=dash'>
               <Sidebar.Item
-                active={tab === 'profile'}
-                icon={HiUser}
-                label={user?.publicMetadata?.isAdmin ? 'Admin' : 'User'}
-                labelColor='dark'
+                active={tab === 'dash' || !tab}
+                icon={HiChartPie}
                 as='div'
               >
-                Profile
+                Dashboard
               </Sidebar.Item>
             </Link>
-            {user?.publicMetadata?.isAdmin && (
-              <Link href='/dashboard?tab=posts'>
-                <Sidebar.Item
-                  active={tab === 'posts'}
-                  icon={HiDocumentText}
-                  as='div'
-                >
-                  Posts
-                </Sidebar.Item>
-              </Link>
-            )}
-            {user?.publicMetadata?.isAdmin && (
-              <Link href='/dashboard?tab=users'>
-                <Sidebar.Item
-                  active={tab === 'users'}
-                  icon={HiOutlineUserGroup}
-                  as='div'
-                >
-                  Users
-                </Sidebar.Item>
-              </Link>
-            )}
-            <Sidebar.Item icon={HiArrowSmRight} className='cursor-pointer'>
-              <SignOutButton />
+          )}
+          <Link href='/dashboard?tab=profile'>
+            <Sidebar.Item
+              active={tab === 'profile'}
+              icon={HiUser}
+              label={user?.publicMetadata?.isAdmin ? 'Admin' : 'User'}
+              labelColor='dark'
+              as='div'
+            >
+              Profile
             </Sidebar.Item>
-          </Sidebar.ItemGroup>
-        </Sidebar.Items>
-      </Sidebar>
-    </Suspense>
+          </Link>
+          {user?.publicMetadata?.isAdmin && (
+            <Link href='/dashboard?tab=posts'>
+              <Sidebar.Item
+                active={tab === 'posts'}
+                icon={HiDocumentText}
+                as='div'
+              >
+                Posts
+              </Sidebar.Item>
+            </Link>
+          )}
+          {user?.publicMetadata?.isAdmin && (
+            <Link href='/dashboard?tab=users'>
+              <Sidebar.Item
+                active={tab === 'users'}
+                icon={HiOutlineUserGroup}
+                as='div'
+              >
+                Users
+              </Sidebar.Item>
+            </Link>
+          )}
+          <Sidebar.Item icon={HiArrowSmRight} className='cursor-pointer'>
+            <SignOutButton />
+          </Sidebar.Item>
+        </Sidebar.ItemGroup>
+      </Sidebar.Items>
+    </Sidebar>
   );
 }

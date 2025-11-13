@@ -3,9 +3,13 @@
 import { Table } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { FaCheck, FaTimes } from 'react-icons/fa';
-import { useUser } from '@clerk/nextjs';
+import { UserProfile, useUser } from '@clerk/nextjs';
+import { useTheme } from 'next-themes';
+import { dark } from '@clerk/themes';
+
 export default function DashUsers() {
-  const { user, isLoaded } = useUser();
+  const { user, isLoaded, isSignedIn } = useUser();
+  const { theme } = useTheme();
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -33,13 +37,28 @@ export default function DashUsers() {
     }
   }, [user?.publicMetadata?.isAdmin]);
 
-  if (!user?.publicMetadata?.isAdmin && isLoaded) {
+  // Show loading state while checking authentication
+  if (!isLoaded) {
     return (
-      <div className='flex flex-col items-center justify-center h-full w-full py-7'>
-        <h1 className='text-2xl font-semibold'>You are not an admin!</h1>
+      <div className='flex justify-center items-center w-full'>
+        <div>Loading...</div>
       </div>
     );
   }
+
+  // Redirect or show message if user is not signed in
+  if (!isSignedIn) {
+    return (
+      <div className='flex justify-center items-center w-full'>
+        <div className='text-center'>
+          <h2 className='text-xl font-semibold mb-2'>Access Denied</h2>
+          <p>Please sign in to view your profile.</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Only render UserProfile when user is definitely signed in
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
       {user?.publicMetadata?.isAdmin && users.length > 0 ? (

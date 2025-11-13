@@ -25,7 +25,7 @@
     "clsx": "^2.1.1",
     "firebase": "^12.5.0",
     "flowbite": "^4.0.0",
-    "flowbite-react": "^0.10.2",
+    "flowbite-react": "^0.12.10",
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "lucide-react": "^0.553.0",

@@ -1,11 +1,9 @@
 'use client';
 
-import { Button, Select, TextInput } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import PostCard from '../../components/PostCard';
 
-const flowbite = require('flowbite-react/tailwind');
 
 const searchParameters = useSearchParams();
 export default function Search() {

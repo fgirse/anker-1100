@@ -1,5 +1,4 @@
 import CallToAction from '../../components/CallToAction';
-const flowbite = require('flowbite-react/tailwind');
 
 export default function Projects() {
   return (

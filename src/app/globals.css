@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source "../../.flowbite-react/class-list.json";
+
 body {
   height: 100vh;
   background-color:#ededed;
@@ -218,33 +220,7 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.bg-hero {
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(25, 36, 45, 1),
-      rgba(0, 0, 255, 0),
-      rgba(25, 36, 45, 1)
-    ),
-    url("/lighthouse.webp");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 10%;
-  width: 100%;
-}
 
-@media (min-width: 890px) {
-  .bg-hero {
-    background-image:
-      linear-gradient(
-        to bottom,
-        rgba(25, 36, 45, 1),
-        rgba(0, 0, 255, 0),
-        rgba(25, 36, 45, 1)
-      ),
-      url("/5566.svg");
-  }
-}
 
 .bg-sportarena {
   background-image:

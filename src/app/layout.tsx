@@ -17,6 +17,7 @@ import { ThemeModeScript } from 'flowbite-react';
 import { ThemeProvider } from 'next-themes';
 import ThemeCom from '../components/ThemeCom';
 import Header from "../components/Header";
+import MenuBar from "../components/Navigation";
 
 const bowlbyOne = Bowlby_One({ 
   weight: '400',
@@ -45,7 +46,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${bowlbyOne.variable} ${architectsDaughter.variable} antialiased`}>
-          <Header/>
+          <MenuBar/>
           {children}
         </body>
       </html>

@@ -1,5 +1,5 @@
 'use client';
-import { Button, Navbar, NavbarToggle, NavbarLink, NavbarCollapse, TextInput } from 'flowbite-react';
+import { Button, Navbar, TextInput } from 'flowbite-react';
 import Link from 'next/link';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
@@ -7,14 +7,8 @@ import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import { dark, light } from '@clerk/themes';
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-
-function DashboardContent() {
-  const searchParams = useSearchParams();
-  // component logic
-}
-
 export default function Header() {
   const path = usePathname();
   const { theme, setTheme } = useTheme();
@@ -38,17 +32,17 @@ export default function Header() {
     }
   }, [searchParams]);
   return (
-    <Navbar className=' lg:border-b-2 lg:h-24  lg:w-full '>
+    <Navbar className='border-b-2'>
       <Link
         href='/'
-        className=' relative self-center whitespace-nowrap text-[4vw] sm:text-3xl font-semibold dark:text-white'
+        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
       >
-        <span className='relative left-5 top-[2vh] px-2 py-1 bg-linear-to-r from-yellow-500 via-amber-500 to-green-500 rounded-lg text-white'>
-          Rettungsanker-Bloq
+        <span className='px-2 py-1 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
+          Sahand&apos;s
         </span>
-        
+        Blog
       </Link>
-      <form className='relative top-[2vh]' onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <TextInput
           type='text'
           placeholder='Search...'
@@ -80,30 +74,30 @@ export default function Header() {
         </SignedIn>
         <SignedOut>
           <Link href='/sign-in'>
-            <button className='relative right-[3vw] top-[2vh] w-24 uppercase bg-linear-to-r from-purple-500 to-blue-500 text-white text-2xl hover:bg-amber-500 px-4 py-2 rounded-lg border border-purple-300 transition-colors'>
+            <Button gradientDuoTone='purpleToBlue' outline>
               Sign In
-            </button>
+            </Button>
           </Link>
         </SignedOut>
-        <NavbarToggle className='relative right-[3vw] top-[2vh] hover:text-amber-500' />
+        <Navbar.Toggle />
       </div>
-      <NavbarCollapse>
+      <Navbar.Collapse>
         <Link href='/'>
-          <NavbarLink active={path === '/'} as={'div'}>
+          <Navbar.Link active={path === '/'} as={'div'}>
             Home
-          </NavbarLink>
+          </Navbar.Link>
         </Link>
         <Link href='/about'>
-          <NavbarLink active={path === '/about'} as={'div'}>
+          <Navbar.Link active={path === '/about'} as={'div'}>
             About
-          </NavbarLink>
+          </Navbar.Link>
         </Link>
         <Link href='/projects'>
-          <NavbarLink active={path === '/projects'} as={'div'}>
+          <Navbar.Link active={path === '/projects'} as={'div'}>
             Projects
-          </NavbarLink>
+          </Navbar.Link>
         </Link>
-      </NavbarCollapse>
+      </Navbar.Collapse>
     </Navbar>
   );
 }

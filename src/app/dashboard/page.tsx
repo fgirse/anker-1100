@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import DashSidebar from '../../components/DashSidebar';
-import DashProfile from '../../components/DashProfile';
+import { Suspense, useEffect, useState } from 'react';
+import DashSidebar from '@/components/DashSidebar';
+import DashProfile from '@/components/DashProfile';
 import { useSearchParams } from 'next/navigation';
-import DashPosts from '../../components/DashPosts';
-import DashUsers from '../../components/DashUsers';
-import DashboardComp from '../../components/DashboardComp';
-export default function Dashboard() {
+import DashPosts from '@/components/DashPosts';
+import DashUsers from '@/components/DashUsers';
+import DashboardComp from '@/components/DashboardComp';
+
+function DashboardContent() {
   const searchParams = useSearchParams();
   const [tab, setTab] = useState('');
   useEffect(() => {
@@ -31,5 +32,13 @@ export default function Dashboard() {
       {tab === 'users' && <DashUsers />}
       {tab === 'dash' && <DashboardComp />}
     </div>
+  );
+}
+
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={<div>Loading dashboard...</div>}>
+      <DashboardContent />
+    </Suspense>
   );
 }

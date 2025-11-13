@@ -3,7 +3,11 @@
 import { Button, Select, TextInput } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import PostCard from '../components/PostCard';
+import PostCard from '../../components/PostCard';
+
+const flowbite = require('flowbite-react/tailwind');
+
+const searchParameters = useSearchParams();
 export default function Search() {
   const [sidebarData, setSidebarData] = useState({
     searchTerm: '',
@@ -15,10 +19,9 @@ export default function Search() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
-  const searchParams = useSearchParams();
   const router = useRouter();
   useEffect(() => {
-    const urlParams = new URLSearchParams(searchParams);
+    const urlParams = new URLSearchParams(searchParameters);
     const searchTermFromUrl = urlParams.get('searchTerm');
     const sortFromUrl = urlParams.get('sort');
     const categoryFromUrl = urlParams.get('category');
@@ -61,7 +64,7 @@ export default function Search() {
       }
     };
     fetchPosts();
-  }, [searchParams]);
+  }, [searchParameters]);
   const handleChange = (e) => {
     if (e.target.id === 'searchTerm') {
       setSidebarData({ ...sidebarData, searchTerm: e.target.value });
@@ -80,7 +83,7 @@ export default function Search() {
     if (!sidebarData.searchTerm) {
       sidebarData.searchTerm = '';
     }
-    const urlParams = new URLSearchParams(searchParams);
+    const urlParams = new URLSearchParams(searchParameters);
     urlParams.set('searchTerm', sidebarData.searchTerm);
     urlParams.set('sort', sidebarData.sort);
     urlParams.set('category', sidebarData.category);
@@ -90,7 +93,7 @@ export default function Search() {
   const handleShowMore = async () => {
     const numberOfPosts = posts.length;
     const startIndex = numberOfPosts;
-    const urlParams = new URLSearchParams(searchParams);
+    const urlParams = new URLSearchParams(searchParameters);
     urlParams.set('startIndex', startIndex);
     const searchQuery = urlParams.toString();
     const res = await fetch('/api/post/get', {

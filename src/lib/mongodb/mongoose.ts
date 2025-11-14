@@ -8,11 +8,15 @@ export const connect = async () => {
     console.log('Already connected to MongoDB');
     return;
   }
+
+  const uri = process.env.MONGODB_URI;
+  if (!uri) {
+    throw new Error('MONGODB_URI environment variable is not set');
+  }
+
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
+    await mongoose.connect(uri, {
       dbName: 'rettungsanker',
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     });
     console.log('Connected to MongoDB');
     initialized = true;

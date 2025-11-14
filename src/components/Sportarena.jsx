@@ -9,7 +9,7 @@ import Marquee from '../components/ticker';
 
 
 const SportArena = () => (
-  <section id="section-sportarena" className={`${styles.paddings} relative z-10 bg-sportarena flex flex-col justify-beetween`}>
+  <section id="section-sportarena" className={`${styles.paddings} relative z-10 bg-sportarena flex flex-col justify-beetween top-20`}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"

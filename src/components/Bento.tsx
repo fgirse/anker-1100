@@ -52,7 +52,7 @@ md:gap-2 m-4">
       </div>
       <div className="football col-start-1 row-start-12 row-span-6 md:col-start-6 md:row-start-3 md:col-span-1 md:row-span-3 bg-yellow-800 rounded-md p-10">
      <h1 className=" lg:top-[5vh] text-4xl text-center headingA text-yellow-600 lg:text-4xl">regionale weine</h1>
-            <h2 className=" top-5 lg:top-[8vh] text-center text-xl text-white lg:text-2xl">
+            <h2 className=" top-5 lg:top-[8vh] text-center text-2xl text-white lg:text-2xl">
               Qualitativ hochwertige Weine aus der Region Kaiserstuhl und dem Markgräflerland. Hauslieferant Weingut Heinemann Scherzingen
             </h2>
 

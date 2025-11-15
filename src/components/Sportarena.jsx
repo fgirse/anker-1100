@@ -32,7 +32,7 @@ const SportArena = () => (
             <h1 className='text-white text-[1.33rem]'>Zahlen-Fakten-Punkte-Tore</h1>
 
           </div>
-          <div >
+          <div className='' >
             <Modale16/>
             <h1 className='text-white text-[2.33rem]'>Die Bundesliga Saison 2025/2026</h1>
             <h1 className='text-white text-[1.33rem]'>Tabelle</h1>

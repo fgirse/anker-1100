@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Card } from "../components/ui/card";
 import Image from "next/image"  
+import LogoSC from "../../public/LogoSCFreiburg.png";
 import next from "next"
 interface TeamStanding {
   teamName: string
@@ -134,7 +135,7 @@ export default function SCFreiburgMarquee() {
     <>
       {/* Detailed stats below marquee */}
       <div className="mt-6 flex flex-row gap-4 items-center overflow-x-auto">
-        <Image src="/LogoScFreiburg.png" alt="SC Freiburg Logo" width={100} height={80} className="rounded-full"/>
+        <Image src={ LogoSC} alt="SC Freiburg Logo" width={100} height={80} className="rounded-full"/>
         <section className="p-4 flex flex-row">
           <div className="flex flex-row items-center gap-x-3">
             <h3 className="text-white font-semibold text-sm lg:text-6xl  mb-2">SPIELTAG</h3>
@@ -152,7 +153,7 @@ export default function SCFreiburgMarquee() {
           </div>
         </section>
 
-        <section className=" bg-black p-4">
+        <section className=" p-4">
           <div className="flex items-center gap-x-3 space-y-1 text-center">
           <h3 className="font-semibold text-sm text-white lg:text-2xl mb-2">TORVERHÄLTNIS</h3>
           

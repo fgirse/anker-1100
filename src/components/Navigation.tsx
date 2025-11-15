@@ -18,7 +18,7 @@ import Bulleye from "../../public/Bulleye.svg";
 
 export default function Navigation() {
   return (
-    <Navbar fluid rounded className="lg:bg-[url('/Wood3.svg')] bg-cover bg-no-repeat bg-center px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+    <Navbar fluid rounded className="bg-red-900 lg:bg-[url('/Wood3.svg')] bg-cover bg-no-repeat bg-center px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
       <NavbarBrand href="/">
         <div className="relative left-5 top-5 w-24 h-24 lg:w-36 lg:h-36 ml-12">
           <Image src={LogoNeu} width={200} height={140} className="" alt="Rettungsanker Logo" />
@@ -30,7 +30,7 @@ export default function Navigation() {
 
         <NavbarToggle className="text-white text-2xl relative lg:right-5" />
       </div>
-      <NavbarCollapse>
+      <NavbarCollapse >
         <div className="flex items-center gap-3  ">
           <Image src={Bulleye} width={50} height={50} className="" alt="Bulleye" />
           <NavbarLink className="px-2 py-1 text-white text-2xl uppercase hover:bg-amber-500 rounded-lg" href="/">Home</NavbarLink>

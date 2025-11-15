@@ -43,7 +43,7 @@ export default function Modale16() {
                   alt="icon"
                   width={120}
                   height={120}
-                  className="w-4/4 h-4/4 object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </button>

@@ -71,6 +71,13 @@ body {
   height:100dvh;
 }
 
+.container {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow-x: hidden !important;
+}
+
 :root {
   --font-base: "Architects Daughter", BowlbyOneSC;
   --font-alt: "Open Sans", BowlbyOneSC;

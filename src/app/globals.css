@@ -67,7 +67,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x:hidden !important;
+  overflow-x: hidden !important;
+  height:100dvh;
 }
 
 :root {
@@ -98,6 +99,10 @@ input:-webkit-autofill:focus {
   transition:
     background-color 600000s 0s,
     color 600000s 0s;
+}
+
+.football {
+  padding: 1rem;
 }
 
 /* architects-daughter-regular - latin */

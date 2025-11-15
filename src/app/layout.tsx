@@ -43,7 +43,7 @@ export default function RootLayout({
         <head>
           <ThemeModeScript />
         </head>
-        <body className={`${bowlbyOne.variable} ${architectsDaughter.variable}  w-full antialiased`}>
+        <body className={`${bowlbyOne.variable} ${architectsDaughter.variable}  antialiased`}>
           <ThemeProvider>
             <ThemeCom>
               <MenuBar/>

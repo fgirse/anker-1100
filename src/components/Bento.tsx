@@ -19,7 +19,11 @@ export default function Bento() {
     <h1 className="relative top-[5vh] text-center text-[3.2rem] lg:text-[4vw] lg: leading-12 headingA text-yellow-600">gastlichkeit ist unsere philosophie</h1>
 <section className="flex flex-col items-center justify-center">
 {/* Bento Grid Container */}
-<div className="relative top-[8vh] w-[86vw] h-[6200px] lg:w-[1600px] lg:h-[2100px] grid grid-cols-1 md:grid-cols-6 grid-rows-12 md:grid-rows-12 gap-2 md:gap-2 m-4">
+<div className="relative top-[8vh] w-[86vw] h-full lg:w-[1600px] lg:h-full grid grid-cols-1 md:grid-cols-6 grid-rows-12 md:grid-rows-12 gap-4
+
+
+
+md:gap-2 m-4">
       <div className="col-start-1 row-start-1 row-span-2  bg-slate-800 gap-5 md:col-start-1 md:row-start-1 md:col-span-4 md:row-span-1 lg:bg-slate-900 rounded-md p-10">
         <h1 className="relative lg:top-[2vh] text-center top-16 text-7xl headingA text-black lg:text-6xl">unser angebot und unser service</h1>
       </div>
@@ -54,21 +58,21 @@ export default function Bento() {
 
       </div>
       <div className="col-start-1 row-start-18 row-span-2   md:col-start-1 md:row-start-5 md:col-span-1 md:row-span-3 bg-stone-800 rounded-md p-10">
-         <div className="relative left-12 lg:top-[2vh] lg:left-[8vw] lg:w-[60vw] lg:h-[60vh] justify-center">
-            <Image src={Cocktail} alt="CocktailIcon" width={250} height={250} />
+         <div className="relative left-20 lg:top-[2vh] lg:left-[8vw] lg:w-[60vw] lg:h-[60vh] justify-center">
+            <Image src={Cocktail} alt="CocktailIcon" width={200}/>
           </div>
 
       </div>
-      <div className="col-start-1 row-start-20 row-span-6   md:col-start-2 md:row-start-5 md:col-span-2 md:row-span-3 bg-stone-800 rounded-md p-10">
+      <div className="col-start-1 row-start-20 row-span-8 md:col-start-2 md:row-start-5 md:col-span-2 md:row-span-3 bg-stone-800 rounded-md p-10">
 
-<h1 className="relative top-3 lg:top-[3vh] text-3xl text-center headingA text-yellow-600 lg:text-3xl">cocktails & longdrinks</h1>
-          <h2 className="relative top-3 lg:top-[5vh] text-xl text-center text-white lg:text-[1.4rem]">
+<h1 className="relative top-1 lg:top-[3vh] text-3xl text-center headingA text-yellow-600 lg:text-3xl">cocktails & longdrinks</h1>
+          <h2 className="relative top-1 lg:top-[5vh] text-xl text-center text-white lg:text-[1.4rem]">
             Erleben Sie unsere kreativen Cocktails und erfrischenden Longdrinks, die mit hochwertigen Spirituosen und frischen Zutaten köstlich zubereitet werden.
           </h2>
 
 
       </div>
-      <div className="col-start-1 row-start-28 row-span-2 md:col-start-4 md:row-start-7 md:col-span-2 md:row-span-2 bg-red-900 rounded-md p-10">
+      <div className="col-start-1 row-start-28 row-span-4 md:col-start-4 md:row-start-7 md:col-span-2 md:row-span-2 bg-red-900 rounded-md p-10">
  
           <h1 className="relative top-3 lg:top-[5vh] text-center text-4xl headingA text-yellow-600 lg:text-5xl">fussball tv live</h1>
           <h2 className="text-xl text-center text-white lg:text-[1.1rem] relative top-2 lg:top-[5vh]">
@@ -78,38 +82,38 @@ export default function Bento() {
           
 
       </div>
-      <div className="col-start-1 row-start-31 row-span-5  md:col-start-6 md:row-start-6 md:col-span-1 md:row-span-3 bg-red-900 rounded-md p-10">
+      <div className="col-start-1 row-start-32 row-span-6  md:col-start-6 md:row-start-6 md:col-span-1 md:row-span-3 bg-red-900 rounded-md p-10">
         <div className="lg:relative lg:top-[8vh] flex flex-col items-center justify-center">
             <Image src={Fussball} alt="Fussball-Illustration" width={175} height={175} />
           </div>
         
        
       </div>
-      <div className="col-start-1 row-start-36 row-span-4   md:col-start-1 md:row-start-8 md:col-span-2 md:row-span-1 bg-slate-800 rounded-md p-10">
+      <div className="col-start-1 row-start-38 row-span-4   md:col-start-1 md:row-start-8 md:col-span-2 md:row-span-1 bg-slate-800 rounded-md p-10">
         <div className="relative lg:top-[5vh] flex flex-col items-center justify-center">
           <Image src={LogoAlt} alt="Logo Alt" width={400} height={200} />
         </div>
       </div>
-      <div className="col-start-1 row-start-40 row-span-2   md:col-start-3 md:row-start-8 md:col-span-3 md:row-span-1 bg-slate-800 rounded-md p-10">
+      <div className="col-start-1 row-start-42    md:col-start-3 md:row-start-8 md:col-span-3 md:row-span-1 bg-slate-800 rounded-md p-10">
         
         </div>
-      <div className="col-start-1 row-start-43 row-span-2   md:col-start-1 md:row-start-9 md:col-span-2 md:row-span-3 bg-yellow-800 rounded-md p-10">
+      <div className="col-start-1 row-start-44 row-span-6   md:col-start-1 md:row-start-9 md:col-span-2 md:row-span-3 bg-yellow-800 rounded-md p-10">
 
-                 <h1 className="lg:relative lg:top-[5vh] text-2xl text-center headingA text-yellow-500 lg:text-4xl">party - event ?</h1>
-          <h2 className="text-xl text-center text-white lg:text-2xl lg:relative lg:top-[8vh]">
+                 <h1 className="relative top-3 lg:top-[5vh] text-2xl text-center headingA text-yellow-500 lg:text-4xl">party - event ?</h1>
+          <h2 className="relative top-3 text-xl text-center text-white lg:text-2xl relative lg:top-[8vh]">
             Der Rettungsanker ist die ideale Location für Ihren privaten oder Business Event. Im Rahmen einer "gesckossenen Gesellschaft" stehen Ihnen die Räumlichkeiten des Rettungsankers zur Verfügung. Auf Wunsch Catering durch unseren Kooperationspartner möglich ! Sprechen Sie uns an oder kontaktieren Sie uns per e.mail.
           </h2> 
                   
          
         </div>
-      <div className="col-start-1 row-start-45 row-span-4  md:col-start-3 md:row-start-9 md:col-span-1 md:row-span-3 bg-yellow-800 rounded-md p-10">
+      <div className="col-start-1 row-start-50 row-span-4  md:col-start-3 md:row-start-9 md:col-span-1 md:row-span-3 bg-yellow-800 rounded-md p-10">
        <div className="lg:relative lg:top-[5vh] flex flex-col items-center  justify-center">
 
 
             <Image src={Crowdparty} alt="Crowd Illustration" width={600} height={200} />
           </div>
       </div>
-      <div className="col-start-1 row-start-49 row-span-4   md:col-start-4 md:row-start-9 md:col-span-2 md:row-span-3 bg-stone-600 rounded-md p-10">
+      <div className="col-start-1 row-start-54 row-span-5   md:col-start-4 md:row-start-9 md:col-span-2 md:row-span-3 bg-stone-600 rounded-md p-10">
 
           <h1 className="lg:relative lg:top-[5vh] text-4xl text-center headingA text-yellow-600 lg:text-3xl">hans albers</h1>
           <h2 className="text-xl text-center text-white lg:text-2xl lg:relative lg:top-[8vh]  ">
@@ -118,7 +122,7 @@ export default function Bento() {
 
 
       </div>
-      <div className="col-start-1 row-start-53 row-span-5   md:col-start-6 md:row-start-9 md:col-span-1 md:row-span-3 bg-stone-600 rounded-md p-10">
+      <div className="col-start-1 row-start-59 row-span-5   md:col-start-6 md:row-start-9 md:col-span-1 md:row-span-3 bg-stone-600 rounded-md p-10">
         <div className="w-80 flex flex-col items-center relative top-[1vh]">
             <Image src={HansAlbers} alt="Hans Albers" width={275} height={275} />
           </div>

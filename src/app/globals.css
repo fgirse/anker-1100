@@ -105,6 +105,10 @@ input:-webkit-autofill:focus {
   padding: 1rem;
 }
 
+.hero {
+  padding-top: 5rem;
+}
+
 /* architects-daughter-regular - latin */
 @font-face {
   font-family: "Architects Daughter";

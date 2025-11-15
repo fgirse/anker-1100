@@ -24,8 +24,8 @@ export default function Bento() {
 
 
 md:gap-2 m-4">
-      <div className="col-start-1 row-start-1 row-span-2  bg-slate-800 gap-5 md:col-start-1 md:row-start-1 md:col-span-4 md:row-span-1 lg:bg-slate-900 rounded-md p-10">
-        <h1 className="relative lg:top-[2vh] text-center top-12 text-6xl headingA text-black lg:text-6xl">unser angebot und unser service</h1>
+      <div className="hero col-start-1 row-start-1 row-span-2  bg-slate-800 gap-5 md:col-start-1 md:row-start-1 md:col-span-4 md:row-span-1 lg:bg-slate-900 rounded-md p-10">
+        <h1 className=" lg:top-[2vh] text-center top-12 text-4xl headingA text-black lg:text-6xl">unser angebot und unser service</h1>
       </div>
       <div className="lg:relative col-start-1 row-start-3 row-span-2 md:col-start-5 md:row-start-1 md:col-span-2 md:row-span-2 lg:bg-slate-800 rounded-md p-10">
         <div className="relative top-9  lg:top-[5vh] lg:w-screen lg:h-screen flex flex-col items-center ">
@@ -37,10 +37,10 @@ md:gap-2 m-4">
           <Image src={Astra} alt="Astra vom Fass" width={500} height={200} />
         </div>
       </div>
-      <div className="col-start-1 row-start-8 row-span-2 md:col-start-3 md:row-start-2 md:col-span-1 md:row-span-3 bg-red-900 rounded-md p-10">
-<h1 className="relative top-7 lg:relative lg:top-[4vh] text-4xl text-center headingA text-yellow-600 lg:text-4xl">bier vom fass</h1>
+      <div className="football col-start-1 row-start-8 row-span-2 md:col-start-3 md:row-start-2 md:col-span-1 md:row-span-3 bg-red-900 rounded-md p-10">
+<h1 className=" top-7 lg:relative lg:top-[4vh] text-4xl text-center headingA text-yellow-600 lg:text-4xl">bier vom fass</h1>
 
-          <h2 className="relative top-12 text-2xl text-center text-white lg:text-2xl lg:relative lg:top-[8vh]">
+          <h2 className=" text-2xl text-center text-white lg:text-2xl lg:relative lg:top-[8vh]">
             Flensburger Pils - das kühle, frische Blonde von der Waterkant. Astra-Pils - das Kultbier natürlich direkt vom Kiez
           </h2>
       </div>
@@ -50,9 +50,9 @@ md:gap-2 m-4">
           </div>
 
       </div>
-      <div className="col-start-1 row-start-12 row-span-6 md:col-start-6 md:row-start-3 md:col-span-1 md:row-span-3 bg-yellow-800 rounded-md p-10">
-     <h1 className="relative top-3 lg:top-[5vh] text-4xl text-center headingA text-yellow-600 lg:text-4xl">regionale Weine</h1>
-            <h2 className="relative top-5 lg:top-[8vh] text-center text-xl text-white lg:text-2xl">
+      <div className="football col-start-1 row-start-12 row-span-6 md:col-start-6 md:row-start-3 md:col-span-1 md:row-span-3 bg-yellow-800 rounded-md p-10">
+     <h1 className=" lg:top-[5vh] text-4xl text-center headingA text-yellow-600 lg:text-4xl">egionale weine</h1>
+            <h2 className=" top-5 lg:top-[8vh] text-center text-xl text-white lg:text-2xl">
               Qualitativ hochwertige Weine aus der Region Kaiserstuhl und dem Markgräflerland. Hauslieferant Weingut Heinemann Scherzingen
             </h2>
 
@@ -63,10 +63,10 @@ md:gap-2 m-4">
           </div>
 
       </div>
-      <div className="col-start-1 row-start-20 row-span-8 md:col-start-2 md:row-start-5 md:col-span-2 md:row-span-3 bg-stone-800 rounded-md p-10">
+      <div className="football col-start-1 row-start-20 row-span-8 md:col-start-2 md:row-start-5 md:col-span-2 md:row-span-3 bg-stone-800 rounded-md p-10">
 
-<h1 className="relative top-1 lg:top-[3vh] text-3xl text-center headingA text-yellow-600 lg:text-3xl">cocktails & longdrinks</h1>
-          <h2 className="relative top-1 lg:top-[5vh] text-xl text-center text-white lg:text-[1.4rem]">
+<h1 className=" lg:top-[3vh] text-3xl text-center headingA text-yellow-600 lg:text-3xl">cocktails & longdrinks</h1>
+          <h2 className=" lg:top-[5vh] text-xl text-center text-white lg:text-[1.4rem]">
             Erleben Sie unsere kreativen Cocktails und erfrischenden Longdrinks, die mit hochwertigen Spirituosen und frischen Zutaten köstlich zubereitet werden.
           </h2>
 
